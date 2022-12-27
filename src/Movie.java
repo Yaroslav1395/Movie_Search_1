@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
-public class Movie {
+public class Movie implements Comparator<Movies>{
     private String name;
     private int year;
     private String description;
@@ -74,6 +76,25 @@ public class Movie {
                 "\nРежиссер: " + director +
                 "\nВ ролях: ";
     }
+
+    @Override
+    public int compare(Movies o1, Movies o2) {
+        return 0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Movie movie = (Movie) o;
+        return year == movie.year && name.equals(movie.name) && description.equals(movie.description) && director.equals(movie.director) && cast.equals(movie.cast);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, year, description, director, cast);
+    }
+
     private void printCast(){
         for (Actor actor: this.cast) {
             System.out.printf("%s ", actor);

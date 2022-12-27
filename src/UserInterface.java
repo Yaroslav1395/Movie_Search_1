@@ -17,14 +17,17 @@ public class UserInterface {
         System.out.println("3 - Сортировать по названию");
         System.out.println("4 - Сортировать по дате");
         System.out.println("5 - Сортировать по режиссеру");
-        System.out.println("6 - Выход");
+        System.out.println("6 - Поиск фильмов по актеру");
+        System.out.println("7 - Поиск фильмов по режиссеру");
+        System.out.println("6 - Поиск фильмов по году");
+        System.out.println("9 - Выход");
     }
     private int userNumberInput(){
         System.out.println("Введите номер действия");
         int userNumber = 0;
         try{
              userNumber = scanner.nextInt();
-             if(userNumber > 6 || userNumber == 0){
+             if(userNumber > 9 || userNumber == 0){
                 throw new RuntimeException();
              }
              else {
@@ -54,7 +57,10 @@ public class UserInterface {
                 case 3 -> this.movies.sortByName();
                 case 4 -> this.movies.sortByYear();
                 case 5 -> this.movies.sortByDirector();
-                case 6 -> isEnd = true;
+                case 6 -> this.movies.searchByActor();
+                case 7 -> this.movies.searchByDirector();
+                case 8 -> this.movies.searchByYear();
+                case 9 -> isEnd = true;
             }
         }
 
