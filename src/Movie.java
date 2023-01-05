@@ -102,4 +102,9 @@ public class Movie implements Comparator<Movies>{
         System.out.println();
     }
 
+    public void printSearchMovie(String userMovieSearch){
+        if(name.contains(userMovieSearch)){
+            System.out.println(this);
+        }
+    }
 }

@@ -28,20 +28,7 @@ public class Movies {
     public void movieSearch(){
         System.out.println("¬ведите название");
         String movieName = new Scanner(System.in).nextLine();
-        boolean isMovieNameInList = false;
-        for (Movie movie: this.movies) {
-            if(movie.getName().equals(movieName)){
-                isMovieNameInList = true;
-                movie.printMovie();
-            }
-        }
-        if(!isMovieNameInList){
-            for (Movie movie : this.movies) {
-                if (movie.getName().contains(movieName)) {
-                    movie.printMovie();
-                }
-            }
-        }
+        this.movies.forEach(movie -> movie.printSearchMovie(movieName));
     }
 
     public void sortByYear(){

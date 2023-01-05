@@ -28,7 +28,7 @@ public class Actor {
 
     @Override
     public String toString() {
-        return "РРјСЏ: " + fullName +
-                " Р РѕР»СЊ: " + role;
+        return "Имя: " + fullName +
+                " Роль: " + role;
     }
 }
