@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Actor {
     private String fullName;
     private String role;
@@ -30,20 +28,7 @@ public class Actor {
 
     @Override
     public String toString() {
-        return  "»Ïˇ: " + fullName +
-                " –ÓÎ¸: " + role;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Actor actor = (Actor) o;
-        return fullName.equals(actor.fullName) && role.equals(actor.role);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(fullName, role);
+        return "–ò–º—è: " + fullName +
+                " –†–æ–ª—å: " + role;
     }
 }
